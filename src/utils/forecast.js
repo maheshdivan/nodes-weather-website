@@ -12,11 +12,7 @@ const forecast = (lat,long,callback) =>{
             callback('Unable to find location',undefined)
 
         }else{
-            callback(undefined,{
-                temp: response.body.currently.temperature,
-                prec: response.body.currently.precipProbability
-
-            })
+            callback(undefined,{temp: response.body.daily.summary + "it is currently "+ response.body.daily.icon +' Temperature is '+ response.body.currently.temperature})
             
         }
     })
